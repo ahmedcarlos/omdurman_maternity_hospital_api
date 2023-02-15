@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\front_desk_statistic_form;
-
+use Illuminate\Support\Carbon;
 class front_desk_statistic_form_controller extends Controller
 {
     public function get_front_desk_statistic_form($patient_id)
@@ -45,5 +45,32 @@ class front_desk_statistic_form_controller extends Controller
         } else {
             return ['result' => 'result is failed'];
         }
+    }
+    public function Die_pationt_count(){
+        $users = front_desk_statistic_form::select('id', 'date')->where('patients_condition_upon_exit','Died')
+        ->get()
+        ->groupBy(function ($date) {
+            return Carbon::parse($date->date)->format('m');
+        });
+
+    $usermcount = [];
+    $userArr = [];
+
+    foreach ($users as $key => $value) {
+        $usermcount[(int)$key] = count($value);
+    }
+
+    $month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    for ($i = 1; $i <= 12; $i++) {
+        if (!empty($usermcount[$i])) {
+            $userArr[$i]['count'] = $usermcount[$i];
+        } else {
+            $userArr[$i]['count'] = 0;
+        }
+        $userArr[$i]['month'] = $month[$i - 1];
+    }
+
+    return response()->json(array_values($userArr));
     }
 }

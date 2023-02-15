@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\front_desk_patients;
-
+use Illuminate\Support\Carbon;
 class front_desk_patients_controller extends Controller
 {
     public function get_front_desk_patients($patient_id)
@@ -48,5 +48,35 @@ class front_desk_patients_controller extends Controller
         } else {
             return front_desk_patients::where('patient_id', $patient_id_or_name)->orwhere('name', 'LIKE', "%$patient_id_or_name%")->get();
         }
+    }
+    public function today_patient_count(){
+        return front_desk_patients::whereDate('date', Carbon::today())->count();
+    }
+    public function year_pationt_count(){
+        $users = front_desk_patients::select('id', 'date')
+        ->get()
+        ->groupBy(function ($date) {
+            return Carbon::parse($date->date)->format('m');
+        });
+
+    $usermcount = [];
+    $userArr = [];
+
+    foreach ($users as $key => $value) {
+        $usermcount[(int)$key] = count($value);
+    }
+
+    $month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    for ($i = 1; $i <= 12; $i++) {
+        if (!empty($usermcount[$i])) {
+            $userArr[$i]['count'] = $usermcount[$i];
+        } else {
+            $userArr[$i]['count'] = 0;
+        }
+        $userArr[$i]['month'] = $month[$i - 1];
+    }
+
+    return response()->json(array_values($userArr));
     }
 }

@@ -60,12 +60,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //front desk birt report data api
 Route::get('get_front_desk_birth_report_data/{patient_id}', [front_desk_birth_report_data_controller::class, 'get_front_desk_birth_report_data']);
 Route::post('post_front_desk_birth_report_data', [front_desk_birth_report_data_controller::class, 'post_front_desk_birth_report_data']);
-
+Route::get('Newborn_status_count', [front_desk_birth_report_data_controller::class, 'Newborn_status_count']);
 //front desk patients api
 Route::get('get_all_front_desk_patients/', [front_desk_patients_controller::class, 'get_all_front_desk_patients']);
 Route::get('get_front_desk_patients/{patient_id}', [front_desk_patients_controller::class, 'get_front_desk_patients']);
 Route::post('post_front_desk_patients', [front_desk_patients_controller::class, 'post_front_desk_patients']);
-
+Route::get('today_patient_count', [front_desk_patients_controller::class, 'today_patient_count']);
+Route::get('year_pationt_count', [front_desk_patients_controller::class, 'year_pationt_count']);
 //front desk statistics supplement api
 Route::get('get_front_desk_statistics_supplement/{patient_id}', [front_desk_statistics_supplement_controller::class, 'get_front_desk_statistics_supplement']);
 Route::post('post_front_desk_statistics_supplement', [front_desk_statistics_supplement_controller::class, 'post_front_desk_statistics_supplement']);
@@ -73,6 +74,7 @@ Route::post('post_front_desk_statistics_supplement', [front_desk_statistics_supp
 //front desk statistic form api
 Route::get('get_front_desk_statistic_form/{patient_id}', [front_desk_statistic_form_controller::class, 'get_front_desk_statistic_form']);
 Route::post('post_front_desk_statistic_form', [front_desk_statistic_form_controller::class, 'post_front_desk_statistic_form']);
+Route::get('Die_pationt_count', [front_desk_statistic_form_controller::class, 'Die_pationt_count']);
 
 //Search Front desk api
 Route::get('search_patients/{patient_id_or_name}', [front_desk_patients_controller::class, 'search_patients']);
@@ -128,6 +130,7 @@ Route::get('General_count/', [users_controller::class, 'General_count']);
 Route::get('Excellence_count/', [users_controller::class, 'Excellence_count']);
 Route::get('National_Service_count/', [users_controller::class, 'National_Service_count']);
 Route::get('Collaboratore_count/', [users_controller::class, 'Collaboratore_count']);
+Route::get('all_counts/', [users_controller::class, 'all_counts']);
 
 //get_vice_doctor_antenatal_admission_follow_up_sheet api
 Route::get('get_vice_doctor_antenatal_admission_follow_up_sheet/{patient_id}', [vice_doctor_antenatal_admission_follow_up_sheet_controller::class, 'get_vice_doctor_antenatal_admission_follow_up_sheet']);

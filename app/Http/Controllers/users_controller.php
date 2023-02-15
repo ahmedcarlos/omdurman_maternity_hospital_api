@@ -162,6 +162,43 @@ class users_controller extends Controller
     {
         return User::where("status","Collaborator")->count();
     }
-    
+    public function all_counts()
+    {
+        $all_user = User::all()->count();
+        $Vice_Doctor_count = User::where("designation","Vice Doctor")->count();
+        $Statistician_count = User::where("designation","Statistician")->count();
+        $Nurse_count = User::where("designation","Nurse")->count();
+        $General_Doctor_count = User::where("designation","General Doctor")->count();
+        $Male_count = User::where("gender","Male")->count();
+        $Female_count = User::where("gender","Female")->count();
+        $Vice_count = User::where("status","Vice")->count();
+        $Advisor_count = User::where("status","Advisor")->count();
+        $Specialist_count = User::where("status","Specialist")->count();
+        $General_count = User::where("status","General")->count();
+        $Excellence_count = User::where("status","Excellence")->count();
+        $National_Service_count =User::where("status","National Service")->count();
+        $Collaborator_count = User::where("status","Collaborator")->count();
+        
+            return
+             [
+                'all_user' =>  $all_user,
+                'Vice_Doctor_count' =>  $Vice_Doctor_count,
+                'Statistician_count' =>  $Statistician_count,
+                'Nurse_count' =>  $Nurse_count,
+                'General_Doctor_count' =>  $General_Doctor_count,
+                'Male_count' =>  $Male_count,
+                'Female_count' =>  $Female_count,
+                'Vice_count' =>  $Vice_count,
+                'Advisor_count' =>  $Advisor_count,
+                'Specialist_count' =>  $Specialist_count,
+                'General_count' =>  $General_count,
+                'Excellence_count' =>  $Excellence_count,
+                'National_Service_count' =>  $National_Service_count,
+                'Collaborator_count' =>  $Collaborator_count,
+
+        
+        ];
+        
+    }
 
 }

@@ -41,6 +41,27 @@ class front_desk_birth_report_data_controller extends Controller
             return ['result' => 'result is failed'];
         }
     }
+
+    public function New_born_counts()
+    {
+        $Male_count = front_desk_birth_report_data::where("baby_type","Male")->count();
+        $Female_count = front_desk_birth_report_data::where("baby_type","Female")->count();
+
+    }
+public function Newborn_status_count(){
+    $Alive_count = front_desk_birth_report_data::where("newborn_status","Alive")->count();
+    $Dead_count = front_desk_birth_report_data::where("newborn_status","Dead")->count();
+    $Scavenger_count = front_desk_birth_report_data::where("newborn_status","Scavenged")->count();
+    $Died_after_birth_count = front_desk_birth_report_data::where("newborn_status","Died after birth")->count();
+    return
+    [
+       'Alive_count' =>  $Alive_count,
+       'Dead_count' =>  $Dead_count,
+       'Scavenger_count' =>  $Scavenger_count,
+       'Died_after_birth_count' =>  $Died_after_birth_count,
+
+];
+}
 }
 
 /*
