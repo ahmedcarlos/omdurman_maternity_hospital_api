@@ -162,6 +162,10 @@ class users_controller extends Controller
     {
         return User::where("status","Collaborator")->count();
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 90d8ae5e451bbf758fd93ed78e56feca6d992ca6
     public function all_counts()
     {
         $all_user = User::all()->count();
@@ -200,5 +204,9 @@ class users_controller extends Controller
         ];
         
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 90d8ae5e451bbf758fd93ed78e56feca6d992ca6
 
 }
