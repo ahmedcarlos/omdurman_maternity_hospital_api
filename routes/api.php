@@ -67,7 +67,8 @@ Route::get('get_front_desk_patients/{patient_id}', [front_desk_patients_controll
 Route::post('post_front_desk_patients', [front_desk_patients_controller::class, 'post_front_desk_patients']);
 Route::get('today_patient_count', [front_desk_patients_controller::class, 'today_patient_count']);
 Route::get('year_pationt_count', [front_desk_patients_controller::class, 'year_pationt_count']);
-//Route::post('front_desk_patients_start_end_date', [front_desk_patients_controller::class, 'front_desk_patients_start_end_date']);
+Route::post('front_desk_patients_start_end_date', [front_desk_patients_controller::class, 'front_desk_patients_start_end_date']);
+
 //front desk statistics supplement api
 Route::get('get_front_desk_statistics_supplement/{patient_id}', [front_desk_statistics_supplement_controller::class, 'get_front_desk_statistics_supplement']);
 Route::post('post_front_desk_statistics_supplement', [front_desk_statistics_supplement_controller::class, 'post_front_desk_statistics_supplement']);
@@ -77,6 +78,7 @@ Route::get('get_front_desk_statistic_form/{patient_id}', [front_desk_statistic_f
 Route::post('post_front_desk_statistic_form', [front_desk_statistic_form_controller::class, 'post_front_desk_statistic_form']);
 Route::get('Die_pationt_count', [front_desk_statistic_form_controller::class, 'Die_pationt_count']);
 Route::get('patients_condition_upon_exit_counts', [front_desk_statistic_form_controller::class, 'patients_condition_upon_exit_counts']);
+Route::post('die_patients_start_end_date', [front_desk_statistic_form_controller::class, 'die_patients_start_end_date']);
 
 //Search Front desk api
 Route::get('search_patients/{patient_id_or_name}', [front_desk_patients_controller::class, 'search_patients']);

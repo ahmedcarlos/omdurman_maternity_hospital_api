@@ -97,5 +97,9 @@ class front_desk_statistic_form_controller extends Controller
         
     }
 
-
+    public function die_patients_start_end_date(Request $req)
+    {
+        return front_desk_statistic_form::whereBetween('date', [$req->start,$req->end])
+        ->orWhereBetween('date', [$req->start, $req->end])->get();
+    }
 }
