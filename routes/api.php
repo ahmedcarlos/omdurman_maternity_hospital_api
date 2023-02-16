@@ -67,6 +67,7 @@ Route::get('get_front_desk_patients/{patient_id}', [front_desk_patients_controll
 Route::post('post_front_desk_patients', [front_desk_patients_controller::class, 'post_front_desk_patients']);
 Route::get('today_patient_count', [front_desk_patients_controller::class, 'today_patient_count']);
 Route::get('year_pationt_count', [front_desk_patients_controller::class, 'year_pationt_count']);
+//Route::post('front_desk_patients_start_end_date', [front_desk_patients_controller::class, 'front_desk_patients_start_end_date']);
 //front desk statistics supplement api
 Route::get('get_front_desk_statistics_supplement/{patient_id}', [front_desk_statistics_supplement_controller::class, 'get_front_desk_statistics_supplement']);
 Route::post('post_front_desk_statistics_supplement', [front_desk_statistics_supplement_controller::class, 'post_front_desk_statistics_supplement']);
@@ -75,6 +76,7 @@ Route::post('post_front_desk_statistics_supplement', [front_desk_statistics_supp
 Route::get('get_front_desk_statistic_form/{patient_id}', [front_desk_statistic_form_controller::class, 'get_front_desk_statistic_form']);
 Route::post('post_front_desk_statistic_form', [front_desk_statistic_form_controller::class, 'post_front_desk_statistic_form']);
 Route::get('Die_pationt_count', [front_desk_statistic_form_controller::class, 'Die_pationt_count']);
+Route::get('patients_condition_upon_exit_counts', [front_desk_statistic_form_controller::class, 'patients_condition_upon_exit_counts']);
 
 //Search Front desk api
 Route::get('search_patients/{patient_id_or_name}', [front_desk_patients_controller::class, 'search_patients']);
@@ -131,6 +133,7 @@ Route::get('Excellence_count/', [users_controller::class, 'Excellence_count']);
 Route::get('National_Service_count/', [users_controller::class, 'National_Service_count']);
 Route::get('Collaboratore_count/', [users_controller::class, 'Collaboratore_count']);
 Route::get('all_counts/', [users_controller::class, 'all_counts']);
+//Route::post('user_start_end_date/', [users_controller::class, 'user_start_end_date']);
 
 //get_vice_doctor_antenatal_admission_follow_up_sheet api
 Route::get('get_vice_doctor_antenatal_admission_follow_up_sheet/{patient_id}', [vice_doctor_antenatal_admission_follow_up_sheet_controller::class, 'get_vice_doctor_antenatal_admission_follow_up_sheet']);

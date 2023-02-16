@@ -79,4 +79,10 @@ class front_desk_patients_controller extends Controller
 
     return response()->json(array_values($userArr));
     }
+
+    public function front_desk_patients_start_end_date(Request $req)
+    {
+        return front_desk_patients::whereBetween('date', [$req->start,$req->end])
+        ->orWhereBetween('date', [$req->start, $req->end])->get();
+    }
 }

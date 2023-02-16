@@ -73,4 +73,29 @@ class front_desk_statistic_form_controller extends Controller
 
     return response()->json(array_values($userArr));
     }
+
+
+    public function patients_condition_upon_exit_counts()
+    {
+        $Died_count = front_desk_statistic_form::where("patients_condition_upon_exit","Died")->count();
+        $Recovered_count = front_desk_statistic_form::where("patients_condition_upon_exit","Recovered")->count();
+        $Better_condition_count = front_desk_statistic_form::where("patients_condition_upon_exit","Better condition")->count();
+        $Escaped_count = front_desk_statistic_form::where("patients_condition_upon_exit","Escaped")->count();
+        $No_improvement_count = front_desk_statistic_form::where("patients_condition_upon_exit","No improvement")->count();
+        $Was_not_treated_count = front_desk_statistic_form::where("patients_condition_upon_exit","Wasn't treated")->count();        
+            return
+             [
+                'Died_count' =>  $Died_count,
+                'Recovered_count' =>  $Recovered_count,
+                'Better_condition_count' =>  $Better_condition_count,
+                'Escaped_count' =>  $Escaped_count,
+                'No_improvement_count' =>  $No_improvement_count,
+                'Was_not_treated_count' =>  $Was_not_treated_count,
+
+        
+        ];
+        
+    }
+
+
 }

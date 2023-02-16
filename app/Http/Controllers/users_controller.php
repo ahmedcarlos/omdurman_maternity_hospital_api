@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Validator;
 use Illuminate\Support\Facades\Auth;
 
 class users_controller extends Controller
@@ -162,10 +161,6 @@ class users_controller extends Controller
     {
         return User::where("status","Collaborator")->count();
     }
-<<<<<<< HEAD
-=======
-    
->>>>>>> 90d8ae5e451bbf758fd93ed78e56feca6d992ca6
     public function all_counts()
     {
         $all_user = User::all()->count();
@@ -204,9 +199,11 @@ class users_controller extends Controller
         ];
         
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 90d8ae5e451bbf758fd93ed78e56feca6d992ca6
 
+    public function user_start_end_date(Request $req)
+    {
+        return User::whereBetween('date', [$req->start,$req->end])
+        ->orWhereBetween('date', [$req->start, $req->end])->get();
+    }
 }
