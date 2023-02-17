@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('patient_id');
             $table->string('user_id');
             $table->dateTime('date')->useCurrent();
+            $table->string('department')->nullable()->default(null);
             $table->string('word')->nullable()->default(null);
             $table->integer('bed_no')->nullable()->default(null);
             $table->string('clinical_remarks')->nullable()->default(null);

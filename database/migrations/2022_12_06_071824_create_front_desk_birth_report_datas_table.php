@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('vitamin_k')->nullable()->default(null);
             $table->string('token')->nullable()->default(null);
             $table->string('baby_type')->nullable()->default(null);
+            $table->string('baby_kind')->nullable()->default(null);
 
 
 

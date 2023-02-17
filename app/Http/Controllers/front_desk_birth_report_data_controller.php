@@ -30,6 +30,7 @@ class front_desk_birth_report_data_controller extends Controller
         $add->vitamin_k = $req->vitamin_k;
         $add->token = $req->token;
         $add->baby_type = $req->baby_type;
+        $add->baby_kind = $req->baby_kind;
         $result = $add->save();
         if($result)
         {
@@ -62,6 +63,19 @@ public function Newborn_status_count(){
 
 ];
 }
+public function Baby_male_count()
+{
+    $m1= front_desk_birth_report_data::where("baby_type","Male")->count();
+    $m2=front_desk_birth_report_data::where("baby_type","Male")->where('baby_kind','twins')->count();
+    return $m1 + $m2;
+}
+public function Baby_female_count()
+{
+    $f1= front_desk_birth_report_data::where("baby_type","Female")->count();
+    $f2=front_desk_birth_report_data::where("baby_type","Female")->where('baby_kind','twins')->count();
+    return $f1+$f2;
+}
+
 }
 
 /*
