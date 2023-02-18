@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\front_desk_statistic_form;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 class front_desk_statistic_form_controller extends Controller
 {
     public function get_front_desk_statistic_form($patient_id)
@@ -99,8 +100,13 @@ class front_desk_statistic_form_controller extends Controller
 
     public function die_patients_start_end_date(Request $req)
     {
-        return front_desk_statistic_form::whereBetween('date', [$req->start,$req->end])
-        ->orWhereBetween('date', [$req->start, $req->end])->get();
+        // return front_desk_statistic_form::whereBetween('date', [$req->start,$req->end])
+        // ->orWhereBetween('date', [$req->start, $req->end])->get();
+        return DB::table('front_desk_patients')
+        ->join('front_desk_statistic_forms','front_desk_patients.patient_id','front_desk_statistic_forms.patient_id')
+        -> select('front_desk_patients.name','front_desk_patients.phone_number')
+        ->whereBetween('front_desk_statistic_forms.date', [$req->start,$req->end])
+        ->orWhereBetween('front_desk_statistic_forms.date', [$req->start, $req->end])->get();
     }
     public function die_patients_start_end_date_count(Request $req)
     {
