@@ -104,7 +104,7 @@ class front_desk_statistic_form_controller extends Controller
         // ->orWhereBetween('date', [$req->start, $req->end])->get();
         return DB::table('front_desk_patients')
         ->join('front_desk_statistic_forms','front_desk_patients.patient_id','front_desk_statistic_forms.patient_id')
-        -> select('front_desk_patients.name','front_desk_patients.phone_number')
+        -> select('front_desk_patients.name','front_desk_patients.phone_number','front_desk_patients.patient_id')
         ->whereBetween('front_desk_statistic_forms.date', [$req->start,$req->end])
         ->orWhereBetween('front_desk_statistic_forms.date', [$req->start, $req->end])->get();
     }
