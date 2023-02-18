@@ -138,7 +138,7 @@ Route::get('Excellence_count/', [users_controller::class, 'Excellence_count']);
 Route::get('National_Service_count/', [users_controller::class, 'National_Service_count']);
 Route::get('Collaboratore_count/', [users_controller::class, 'Collaboratore_count']);
 Route::get('all_counts/', [users_controller::class, 'all_counts']);
-//Route::post('user_start_end_date/', [users_controller::class, 'user_start_end_date']);
+Route::post('user_start_end_date/', [users_controller::class, 'user_start_end_date']);
 
 //get_vice_doctor_antenatal_admission_follow_up_sheet api
 Route::get('get_vice_doctor_antenatal_admission_follow_up_sheet/{patient_id}', [vice_doctor_antenatal_admission_follow_up_sheet_controller::class, 'get_vice_doctor_antenatal_admission_follow_up_sheet']);
