@@ -206,4 +206,9 @@ class users_controller extends Controller
         return User::whereBetween('date', [$req->start,$req->end])
         ->orWhereBetween('date', [$req->start, $req->end])->get();
     }
+    public function user_start_end_date_count(Request $req)
+    {
+        return User::whereBetween('date', [$req->start,$req->end])
+        ->orWhereBetween('date', [$req->start, $req->end])->count();
+    }
 }

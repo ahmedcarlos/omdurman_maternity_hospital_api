@@ -85,7 +85,11 @@ class front_desk_patients_controller extends Controller
         return front_desk_patients::whereBetween('date', [$req->start,$req->end])
         ->orWhereBetween('date', [$req->start, $req->end])->get();
     }
-
+    public function front_desk_patients_start_end_date_count(Request $req)
+    {
+        return front_desk_patients::whereBetween('date', [$req->start,$req->end])
+        ->orWhereBetween('date', [$req->start, $req->end])->count();
+    }
     public function get_all_front_desk_patients_counts()
     {
         return front_desk_patients::all()->count();
