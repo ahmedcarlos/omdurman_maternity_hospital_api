@@ -75,7 +75,19 @@ public function Baby_female_count()
     $f2=front_desk_birth_report_data::where("baby_type","Female")->where('baby_kind','twins')->count();
     return $f1+$f2;
 }
+public function Baby_female_male_count()
+{
+    $m1= front_desk_birth_report_data::where("baby_type","Male")->count();
+    $m2=front_desk_birth_report_data::where("baby_type","Male")->where('baby_kind','twins')->count();
+    $f1= front_desk_birth_report_data::where("baby_type","Female")->count();
+    $f2=front_desk_birth_report_data::where("baby_type","Female")->where('baby_kind','twins')->count();
+    return
+    [
+       'male' =>  $m1+$m2,
+       'female' =>  $f1+$f2,
 
+];
+}
 }
 
 /*

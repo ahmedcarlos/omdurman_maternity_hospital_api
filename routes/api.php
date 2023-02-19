@@ -63,6 +63,8 @@ Route::post('post_front_desk_birth_report_data', [front_desk_birth_report_data_c
 Route::get('Newborn_status_count', [front_desk_birth_report_data_controller::class, 'Newborn_status_count']);
 Route::get('Baby_male_count', [front_desk_birth_report_data_controller::class, 'Baby_male_count']);
 Route::get('Baby_female_count', [front_desk_birth_report_data_controller::class, 'Baby_female_count']);
+Route::get('Baby_female_male_count', [front_desk_birth_report_data_controller::class, 'Baby_female_male_count']);
+
 //front desk patients api
 Route::get('get_all_front_desk_patients/', [front_desk_patients_controller::class, 'get_all_front_desk_patients']);
 Route::get('get_front_desk_patients/{patient_id}', [front_desk_patients_controller::class, 'get_front_desk_patients']);
