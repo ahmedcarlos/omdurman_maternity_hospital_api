@@ -23,7 +23,7 @@ class vice_doctor_regular_drugs_controller extends Controller
     * function name : post_vice_doctor_regular_drugs
     * function job  : send request to vice_doctor_regular_drugs in api
     * Parameters    : $req
-    * Return        : save post_vice_doctor_regular_drugs in the database if the request true else is failed
+    * Return        : save vice_doctor_regular_drugs in the database if the request true else is failed
     */
     public function post_vice_doctor_regular_drugs(Request $req)
     {
