@@ -8,7 +8,7 @@ class front_desk_birth_report_data_controller extends Controller
 {
     /*
     * Function Name : get_front_desk_birth_report_data
-    * Function Job  : function to get front_desk_birth_report_data from api
+    * Function Job  : retrieve front_desk_birth_report_data from api
     * Parameters    : $patient_id
     * Return        : routes all front_desk_birth_report_data from the database
     */
