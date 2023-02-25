@@ -18,7 +18,12 @@ class vice_doctor_clinical_discharge_summary_controller extends Controller
         return vice_doctor_clinical_discharge_summary::where('patient_id',$patient_id)->get();
     }
     
-    //
+    /*
+    * function name : post_vice_doctor_clinical_discharge_summary
+    * function job  : send request to vice_doctor_clinical_discharge_summary in api
+    * Parameters    : $req
+    * Return        : save vice_doctor_clinical_discharge_summary in the database if the request true else is failed
+    */
     public function post_vice_doctor_clinical_discharge_summary(Request $req)
     {
         $add = new vice_doctor_clinical_discharge_summary;
