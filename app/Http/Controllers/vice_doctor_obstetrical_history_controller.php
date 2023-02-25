@@ -7,12 +7,23 @@ use App\Models\vice_doctor_obstetrical_history;
 
 class vice_doctor_obstetrical_history_controller extends Controller
 {
+    /*
+    * Function Name : get_vice_doctor_obstetrical_history
+    * Function Job  : retrieve all vice_doctor_obstetrical_history from api determined by $patient_id
+    * Parameters    : $patient_id
+    * Return        : routes all vice_doctor_obstetrical_history from the database determined by $patient_id
+    */
     public function get_vice_doctor_obstetrical_history($patient_id)
     {
         return vice_doctor_obstetrical_history::where('patient_id', $patient_id)->get();
     }
 
-    //
+    /*
+    * function name : post_vice_doctor_obstetrical_history
+    * function job  : send request to vice_doctor_obstetrical_history in api
+    * Parameters    : $req
+    * Return        : save vice_doctor_obstetrical_history in the database if the request true else is failed
+    */
     public function post_vice_doctor_obstetrical_history(Request $req)
     {
         $add = new vice_doctor_obstetrical_history;
