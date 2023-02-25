@@ -8,10 +8,10 @@ use App\Models\vice_doctor_regular_drugs;
 class vice_doctor_regular_drugs_controller extends Controller
 {
     /*
-    * Function Name : get_vice_doctor_treatment_order_sheet
-    * Function Job  : retrieve all vice_doctor_treatment_order_sheet from api
+    * Function Name : get_vice_doctor_regular_drugs
+    * Function Job  : retrieve all get_vice_doctor_regular_drugs from api determined by $patient_id
     * Parameters    : $patient_id
-    * Return        : routes all get_vice_doctor_treatment_order_sheet from the database
+    * Return        : routes all get_vice_doctor_regular_drugs from the database determined by $patient_id
     */
     public function get_vice_doctor_regular_drugs($patient_id)
     {
@@ -21,7 +21,7 @@ class vice_doctor_regular_drugs_controller extends Controller
     
     /*
     * function name : post_vice_doctor_regular_drugs
-    * function job  : function to send request to vice_doctor_regular_drugs in api
+    * function job  : send request to vice_doctor_regular_drugs in api
     * Parameters    : $req
     * Return        : save post_vice_doctor_regular_drugs in the database if the request true else is failed
     */
