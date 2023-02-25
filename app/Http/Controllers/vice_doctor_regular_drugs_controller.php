@@ -9,9 +9,9 @@ class vice_doctor_regular_drugs_controller extends Controller
 {
     /*
     * Function Name : get_vice_doctor_regular_drugs
-    * Function Job  : retrieve all get_vice_doctor_regular_drugs from api determined by $patient_id
+    * Function Job  : retrieve all vice_doctor_regular_drugs from api determined by $patient_id
     * Parameters    : $patient_id
-    * Return        : routes all get_vice_doctor_regular_drugs from the database determined by $patient_id
+    * Return        : routes all vice_doctor_regular_drugs from the database determined by $patient_id
     */
     public function get_vice_doctor_regular_drugs($patient_id)
     {
