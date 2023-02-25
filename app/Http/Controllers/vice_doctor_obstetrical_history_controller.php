@@ -9,7 +9,7 @@ class vice_doctor_obstetrical_history_controller extends Controller
 {
     /*
     * Function Name : get_vice_doctor_obstetrical_history
-    * Function Job  : retrieve all vice_doctor_obstetrical_history from api determined by $patient_id
+    * Function Job  : retrieve vice_doctor_obstetrical_history from api determined by $patient_id
     * Parameters    : $patient_id
     * Return        : routes all vice_doctor_obstetrical_history from the database determined by $patient_id
     */
