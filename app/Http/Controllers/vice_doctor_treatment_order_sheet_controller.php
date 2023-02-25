@@ -9,9 +9,9 @@ class vice_doctor_treatment_order_sheet_controller extends Controller
 {
     /*
     * Function Name : get_vice_doctor_treatment_order_sheet
-    * Function Job  : retrieve all vice_doctor_treatment_order_sheet from api
+    * Function Job  : retrieve all vice_doctor_treatment_order_sheet from api determined by $patient_id
     * Parameters    : $patient_id
-    * Return        : routes all get_vice_doctor_treatment_order_sheet from the database
+    * Return        : routes all get_vice_doctor_treatment_order_sheet from the database determined by $patient_id
     */
     public function get_vice_doctor_treatment_order_sheet($patient_id)
     {
