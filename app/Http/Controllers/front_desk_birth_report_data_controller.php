@@ -7,17 +7,22 @@ use App\Models\front_desk_birth_report_data;
 class front_desk_birth_report_data_controller extends Controller
 {
     /*
-    **** function get_front_desk_birth_report_data ****
-    * function to get front_desk_birth_report_data from api
-    * Parameters: $patient_id
-    * Return : all front_desk_birth_report_data from
+    * Function Name : get_front_desk_birth_report_data ****
+    * Function Job  : function to get front_desk_birth_report_data from api
+    * Parameters    : $patient_id
+    * Return        : routes all front_desk_birth_report_data from
     */
     public function get_front_desk_birth_report_data($patient_id)
     {
         return front_desk_birth_report_data::where('patient_id',$patient_id)->get();
     }
 
-    //post
+    /*
+    * function name : post_front_desk_birth_report_data ****
+    * function job  : function to send request to front_desk_birth_report_data in api
+    * Parameters    : $req
+    * Return        : save all front_desk_birth_report_data in the database
+    */
     public function post_front_desk_birth_report_data(Request $req)
     {
         $add = new front_desk_birth_report_data;
