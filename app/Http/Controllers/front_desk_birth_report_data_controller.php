@@ -21,7 +21,7 @@ class front_desk_birth_report_data_controller extends Controller
     * function name : post_front_desk_birth_report_data ****
     * function job  : function to send request to front_desk_birth_report_data in api
     * Parameters    : $req
-    * Return        : save front_desk_birth_report_data in the database
+    * Return        : save front_desk_birth_report_data in the database if the request true else is failed
     */
     public function post_front_desk_birth_report_data(Request $req)
     {
