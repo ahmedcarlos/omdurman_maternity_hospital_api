@@ -7,11 +7,23 @@ use App\Models\vice_doctor_delivery_and_postnatal;
 
 class vice_doctor_delivery_and_postnatal_controller extends Controller
 {
+    /*
+    * Function Name : get_vice_doctor_delivery_and_postnatal
+    * Function Job  : retrieve vice_doctor_delivery_and_postnatal from api determined by $patient_id
+    * Parameters    : $patient_id
+    * Return        : routes all vice_doctor_delivery_and_postnatal from the database determined by $patient_id
+    */
     public function get_vice_doctor_delivery_and_postnatal($patient_id)
     {
         return vice_doctor_delivery_and_postnatal::where('patient_id',$patient_id)->get();
     }
-    //
+    
+    /*
+    * function name : post_vice_doctor_delivery_and_postnatal
+    * function job  : send request to vice_doctor_delivery_and_postnatal in api
+    * Parameters    : $req
+    * Return        : save vice_doctor_delivery_and_postnatal in the database if the request true else is failed
+    */
     public function post_vice_doctor_delivery_and_postnatal(Request $req)
     {
         $add = new vice_doctor_delivery_and_postnatal;
