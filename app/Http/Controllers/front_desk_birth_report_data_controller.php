@@ -6,7 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\front_desk_birth_report_data;
 class front_desk_birth_report_data_controller extends Controller
 {
-    //get
+    /*
+    **** function get_front_desk_birth_report_data ****
+    * function to get front_desk_birth_report_data from api
+    * Parameters: $patient_id
+    * Return : all front_desk_birth_report_data from
+    */
     public function get_front_desk_birth_report_data($patient_id)
     {
         return front_desk_birth_report_data::where('patient_id',$patient_id)->get();
