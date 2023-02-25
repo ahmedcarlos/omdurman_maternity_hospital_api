@@ -21,7 +21,7 @@ class vice_doctor_treatment_order_sheet_controller extends Controller
     
     /*
     * function name : post_vice_doctor_treatment_order_sheet
-    * function job  : function to send request to vice_doctor_treatment_order_sheet in api
+    * function job  : send request to vice_doctor_treatment_order_sheet in api
     * Parameters    : $req
     * Return        : save post_vice_doctor_treatment_order_sheet in the database if the request true else is failed
     */
