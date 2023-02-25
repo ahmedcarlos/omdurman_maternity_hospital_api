@@ -96,10 +96,10 @@ class front_desk_birth_report_data_controller extends Controller
         $m2=front_desk_birth_report_data::where("baby_type","Male")->where('baby_kind','twins')->count();
         return $m1 + $m2;
     }
-     /*
-    * function name : Baby_male_count
-    * function job  : calculates statistics in the baby_type field for baby kind twins
-    * Return        : number of male twins int the baby_type field
+    /*
+    * function name : Baby_female_count
+    * function job  : calculates statistics in the baby_type field for baby kind twins 
+    * Return        : number of female twins int the baby_type field
     */
     public function Baby_female_count()
     {
@@ -107,6 +107,13 @@ class front_desk_birth_report_data_controller extends Controller
         $f2=front_desk_birth_report_data::where("baby_type","Female")->where('baby_kind','twins')->count();
         return $f1+$f2;
     }
+    
+    /*
+    * function name : Baby_female_male_count
+    * function job  : calculates statistics in the baby_type field for baby kind twins for male and male
+    * Return        : number of female and male twins int the baby_type field
+    */
+    
     public function Baby_female_male_count()
     {
         $m1= front_desk_birth_report_data::where("baby_type","Male")->count();
