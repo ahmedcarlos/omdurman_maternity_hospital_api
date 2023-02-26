@@ -6,12 +6,23 @@ use Illuminate\Http\Request;
 use App\Models\nurse_investigation_form;
 class nurse_investigation_form_controller extends Controller
 {
+    /*
+    * Function Name : get_nurse_investigation_form
+    * Function Job  : retrieve nurse_investigation_form from api determined by $patient_id
+    * Parameters    : $patient_id
+    * Return        : routes all nurse_investigation_form from the database determined by $patient_id
+    */
     public function get_nurse_investigation_form($patient_id)
     {
         return nurse_investigation_form::where('patient_id',$patient_id)->get();
     }
     
-    //
+    /*
+    * function name : post_nurse_investigation_form
+    * function job  : send request to nurse_investigation_form in api
+    * Parameters    : $req
+    * Return        : save nurse_investigation_form in the database if the request true else is failed
+    */
     public function post_nurse_investigation_form(Request $req)
     {
         $add = new nurse_investigation_form;
