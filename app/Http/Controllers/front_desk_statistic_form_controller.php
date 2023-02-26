@@ -58,6 +58,12 @@ class front_desk_statistic_form_controller extends Controller
             return ['result' => 'result is failed'];
         }
     }
+    
+    /*
+    * function name : Baby_female_male_count
+    * function job  : calculates statistics in the baby_type field for baby kind twins for male and male
+    * Return        : number of female and male twins int the baby_type field
+    */
     public function Die_pationt_count(){
         $users = front_desk_statistic_form::select('id', 'date')->where('patients_condition_upon_exit','Died')
         ->get()
@@ -85,8 +91,12 @@ class front_desk_statistic_form_controller extends Controller
 
     return response()->json(array_values($userArr));
     }
-
-
+    
+    /*
+    * function name : Baby_female_male_count
+    * function job  : calculates statistics in the baby_type field for baby kind twins for male and male
+    * Return        : number of female and male twins int the baby_type field
+    */
     public function patients_condition_upon_exit_counts()
     {
         $Died_count = front_desk_statistic_form::where("patients_condition_upon_exit","Died")->count();
@@ -108,7 +118,12 @@ class front_desk_statistic_form_controller extends Controller
         ];
         
     }
-
+    
+    /*
+    * function name : die_patients_start_end_date
+    * function job  : calculates statistics in the baby_type field for baby kind twins for male and male
+    * Return        : number of female and male twins int the baby_type field
+    */
     public function die_patients_start_end_date(Request $req)
     {
         // return front_desk_statistic_form::whereBetween('date', [$req->start,$req->end])
@@ -119,11 +134,24 @@ class front_desk_statistic_form_controller extends Controller
         ->whereBetween('front_desk_statistic_forms.date', [$req->start,$req->end])
         ->orWhereBetween('front_desk_statistic_forms.date', [$req->start, $req->end])->get();
     }
+    
+    /*
+    * function name : die_patients_start_end_date_count
+    * function job  : calculates statistics in the front_desk_statistic_form table for
+                      die patients with start and end date
+    * Return        : start date and end date for die patients
+    */
     public function die_patients_start_end_date_count(Request $req)
     {
         return front_desk_statistic_form::whereBetween('date', [$req->start,$req->end])
         ->orWhereBetween('date', [$req->start, $req->end])->count();
     }
+    
+    /*
+    * function name : die_patients_counts
+    * function job  : calculates statistics in the front_desk_statistic_form table for die patients
+    * Return        : number of all die patients
+    */
     public function die_patients_counts()
     {
         return front_desk_statistic_form::all()->count();
