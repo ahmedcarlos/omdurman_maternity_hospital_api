@@ -17,7 +17,12 @@ class nurse_and_vice_doctor_i_v_fluids_form_controller extends Controller
         return nurse_and_vice_doctor_i_v_fluids_form::where('patient_id',$patient_id)->get();
     }
     
-    //
+    /*
+    * function name : post_nurse_and_vice_doctor_i_v_fluids_form
+    * function job  : send request to nurse_and_vice_doctor_i_v_fluids_form in api
+    * Parameters    : $req
+    * Return        : save nurse_and_vice_doctor_i_v_fluids_form in the database if the request true else is failed
+    */
     public function post_nurse_and_vice_doctor_i_v_fluids_form(Request $req)
     {
         $add = new nurse_and_vice_doctor_i_v_fluids_form;
