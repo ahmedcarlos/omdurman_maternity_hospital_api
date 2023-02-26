@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class users_controller extends Controller
 {
+    /*
+    * Function Name : get_users
+    * Function Job  : retrieve user from api
+    * Parameters    : $national_id
+    * Return        : routes user from the database
+    */
     public function get_users($national_id)
     {
         return User::where('national_id', $national_id)->get();
