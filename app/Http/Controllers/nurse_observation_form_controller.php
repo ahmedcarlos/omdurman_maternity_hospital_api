@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\nurse_observation_form;
 class nurse_observation_form_controller extends Controller
 {
+     /*
+    * Function Name : get_nurse_observation_form
+    * Function Job  : retrieve nurse_observation_form from api determined by $patient_id
+    * Parameters    : $patient_id
+    * Return        : routes all nurse_observation_form from the database determined by $patient_id
+    */
     public function get_nurse_observation_form($patient_id)
     {
         return nurse_observation_form::where('patient_id',$patient_id)->get();
