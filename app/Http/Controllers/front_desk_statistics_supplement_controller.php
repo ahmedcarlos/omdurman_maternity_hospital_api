@@ -7,12 +7,23 @@ use App\Models\front_desk_statistics_supplement;
 
 class front_desk_statistics_supplement_controller extends Controller
 {
+    /*
+    * Function Name : get_front_desk_statistics_supplement
+    * Function Job  : retrieve front_desk_statistics_supplement from api determined by $patient_id
+    * Parameters    : $patient_id
+    * Return        : routes all front_desk_statistics_supplement from the database determined by $patient_id
+    */
     public function get_front_desk_statistics_supplement($patient_id)
     {
         return front_desk_statistics_supplement::where('patient_id',$patient_id)->get();
     }
     
-    //
+    /*
+    * function name : post_front_desk_statistics_supplement
+    * function job  : send request to front_desk_statistics_supplement in api
+    * Parameters    : $req
+    * Return        : save front_desk_statistics_supplement in the database if the request true else is failed
+    */
     public function post_front_desk_statistics_supplement(Request $req)
     {
         $add = new front_desk_statistics_supplement;
