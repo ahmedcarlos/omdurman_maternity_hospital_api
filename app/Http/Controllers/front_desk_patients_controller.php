@@ -7,15 +7,33 @@ use App\Models\front_desk_patients;
 use Illuminate\Support\Carbon;
 class front_desk_patients_controller extends Controller
 {
+    /*
+    * Function Name : get_front_desk_patients
+    * Function Job  : function to get specific front_desk_patient from api
+    * Parameters    : $patient_id
+    * Return        : routes specific front_desk_patients from the database
+    */
     public function get_front_desk_patients($patient_id)
     {
         return front_desk_patients::where('patient_id', $patient_id)->get();
     }
+    
+    /*
+    * Function Name : get_all_front_desk_patients
+    * Function Job  : function to get all front_desk patients from api
+    * Return        : routes all front_desk_patients from the database
+    */
     public function get_all_front_desk_patients()
     {
         return front_desk_patients::all();
     }
-    //
+    
+    /*
+    * function name : post_front_desk_patients 
+    * function job  : function to send request to post_front_desk_patients in api
+    * Parameters    : $req
+    * Return        : save post_front_desk_patients in the database if the request true else is failed
+    */
     public function post_front_desk_patients(Request $req)
     {
         $add = new front_desk_patients;
@@ -40,7 +58,13 @@ class front_desk_patients_controller extends Controller
             return ['result' => 'result is failed'];
         }
     }
-
+    
+    /*
+    * function name : search_patients 
+    * function job  : function to search for post_front_desk_patients by patient_id or name in api
+    * Parameters    : $patient_id_or_name
+    * Return        : specific front_desk_patients from the database
+    */
     public function search_patients($patient_id_or_name)
     {
         if ($patient_id_or_name == "") {
@@ -90,6 +114,12 @@ class front_desk_patients_controller extends Controller
         return front_desk_patients::whereBetween('date', [$req->start,$req->end])
         ->orWhereBetween('date', [$req->start, $req->end])->count();
     }
+    
+    /*
+    * Function Name : get_all_front_desk_patients_counts
+    * Function Job  : retrieve vice_doctor_regular_drugs from api determined by $patient_id
+    * Return        : routes all vice_doctor_regular_drugs from the database determined by $patient_id
+    */
     public function get_all_front_desk_patients_counts()
     {
         return front_desk_patients::all()->count();

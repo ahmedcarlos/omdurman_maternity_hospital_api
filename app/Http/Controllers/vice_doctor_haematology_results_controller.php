@@ -7,12 +7,23 @@ use App\Models\vice_doctor_haematology_results;
 
 class vice_doctor_haematology_results_controller extends Controller
 {
+    /*
+    * Function Name : get_vice_doctor_haematology_results
+    * Function Job  : retrieve vice_doctor_haematology_results from api determined by $patient_id
+    * Parameters    : $patient_id
+    * Return        : routes all vice_doctor_haematology_results from the database determined by $patient_id
+    */
     public function get_vice_doctor_haematology_results($patient_id)
     {
         return vice_doctor_haematology_results::where('patient_id',$patient_id)->get();
     }
     
-    //
+    /*
+    * function name : post_vice_doctor_haematology_results
+    * function job  : send request to vice_doctor_haematology_results in api
+    * Parameters    : $req
+    * Return        : save vice_doctor_haematology_results in the database if the request true else is failed
+    */
     public function post_vice_doctor_haematology_results(Request $req)
     {
         $add = new vice_doctor_haematology_results;

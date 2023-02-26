@@ -6,11 +6,23 @@ use Illuminate\Http\Request;
 use App\Models\vice_doctor_antenatal_admission_follow_up_sheet;
 class vice_doctor_antenatal_admission_follow_up_sheet_controller extends Controller
 {
+    /*
+    * Function Name : get_vice_doctor_antenatal_admission_follow_up_sheet
+    * Function Job  : retrieve vice_doctor_antenatal_admission_follow_up_sheet from api determined by $patient_id
+    * Parameters    : $patient_id
+    * Return        : routes all vice_doctor_antenatal_admission_follow_up_sheet from the database determined by $patient_id
+    */
     public function get_vice_doctor_antenatal_admission_follow_up_sheet($patient_id)
     {
         return vice_doctor_antenatal_admission_follow_up_sheet::where('patient_id',$patient_id)->get();
     }
-    //
+    
+   /*
+    * function name : post_vice_doctor_antenatal_admission_follow_up_sheet
+    * function job  : send request to vice_doctor_antenatal_admission_follow_up_sheet in api
+    * Parameters    : $req
+    * Return        : save vice_doctor_antenatal_admission_follow_up_sheet in the database if the request true else is failed
+    */ 
     public function post_vice_doctor_antenatal_admission_follow_up_sheet(Request $req)
     {
         $add = new vice_doctor_antenatal_admission_follow_up_sheet;

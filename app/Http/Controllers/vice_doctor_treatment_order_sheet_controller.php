@@ -7,13 +7,24 @@ use App\Models\vice_doctor_treatment_order_sheet;
 
 class vice_doctor_treatment_order_sheet_controller extends Controller
 {
+    /*
+    * Function Name : get_vice_doctor_treatment_order_sheet
+    * Function Job  : retrieve vice_doctor_treatment_order_sheet from api determined by $patient_id
+    * Parameters    : $patient_id
+    * Return        : routes all get_vice_doctor_treatment_order_sheet from the database determined by $patient_id
+    */
     public function get_vice_doctor_treatment_order_sheet($patient_id)
     {
         return vice_doctor_treatment_order_sheet::where('patient_id',$patient_id)->get();
     
     }
     
-    //
+    /*
+    * function name : post_vice_doctor_treatment_order_sheet
+    * function job  : send request to vice_doctor_treatment_order_sheet in api
+    * Parameters    : $req
+    * Return        : save post_vice_doctor_treatment_order_sheet in the database if the request true else is failed
+    */
     public function post_vice_doctor_treatment_order_sheet(Request $req)
     {
         $add = new vice_doctor_treatment_order_sheet;

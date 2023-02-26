@@ -6,13 +6,23 @@ use Illuminate\Http\Request;
 use App\Models\front_desk_birth_report_data;
 class front_desk_birth_report_data_controller extends Controller
 {
-    //get
+    /*
+    * Function Name : get_front_desk_birth_report_data
+    * Function Job  : retrieve front_desk_birth_report_data from api
+    * Parameters    : $patient_id
+    * Return        : routes all front_desk_birth_report_data from the database
+    */
     public function get_front_desk_birth_report_data($patient_id)
     {
         return front_desk_birth_report_data::where('patient_id',$patient_id)->get();
     }
 
-    //post
+    /*
+    * function name : post_front_desk_birth_report_data 
+    * function job  : function to send request to front_desk_birth_report_data in api
+    * Parameters    : $req
+    * Return        : save front_desk_birth_report_data in the database if the request true else is failed
+    */
     public function post_front_desk_birth_report_data(Request $req)
     {
         $add = new front_desk_birth_report_data;
@@ -42,52 +52,81 @@ class front_desk_birth_report_data_controller extends Controller
             return ['result' => 'result is failed'];
         }
     }
-
+    
+    /*
+    * function name : New_born_counts
+    * function job  : calculates statistics in the baby_type field between Male and Female 
+    * Return        : number of female and male in the baby_type field
+    */
     public function New_born_counts()
     {
         $Male_count = front_desk_birth_report_data::where("baby_type","Male")->count();
         $Female_count = front_desk_birth_report_data::where("baby_type","Female")->count();
 
     }
-public function Newborn_status_count(){
-    $Alive_count = front_desk_birth_report_data::where("newborn_status","Alive")->count();
-    $Dead_count = front_desk_birth_report_data::where("newborn_status","Dead")->count();
-    $Scavenger_count = front_desk_birth_report_data::where("newborn_status","Scavenged")->count();
-    $Died_after_birth_count = front_desk_birth_report_data::where("newborn_status","Died after birth")->count();
-    return
-    [
-       'Alive_count' =>  $Alive_count,
-       'Dead_count' =>  $Dead_count,
-       'Scavenger_count' =>  $Scavenger_count,
-       'Died_after_birth_count' =>  $Died_after_birth_count,
+    
+    /*
+    * function name : Newborn_status_count
+    * function job  : calculates statistics in the newborn_status field 
+    * Return        : number of baby alive, dead, scavenger and Died after birth in the newborn_status field
+    */
+    public function Newborn_status_count(){
+        $Alive_count = front_desk_birth_report_data::where("newborn_status","Alive")->count();
+        $Dead_count = front_desk_birth_report_data::where("newborn_status","Dead")->count();
+        $Scavenger_count = front_desk_birth_report_data::where("newborn_status","Scavenged")->count();
+        $Died_after_birth_count = front_desk_birth_report_data::where("newborn_status","Died after birth")->count();
+        return
+        [
+           'Alive_count' =>  $Alive_count,
+           'Dead_count' =>  $Dead_count,
+           'Scavenger_count' =>  $Scavenger_count,
+           'Died_after_birth_count' =>  $Died_after_birth_count,
 
-];
-}
-public function Baby_male_count()
-{
-    $m1= front_desk_birth_report_data::where("baby_type","Male")->count();
-    $m2=front_desk_birth_report_data::where("baby_type","Male")->where('baby_kind','twins')->count();
-    return $m1 + $m2;
-}
-public function Baby_female_count()
-{
-    $f1= front_desk_birth_report_data::where("baby_type","Female")->count();
-    $f2=front_desk_birth_report_data::where("baby_type","Female")->where('baby_kind','twins')->count();
-    return $f1+$f2;
-}
-public function Baby_female_male_count()
-{
-    $m1= front_desk_birth_report_data::where("baby_type","Male")->count();
-    $m2=front_desk_birth_report_data::where("baby_type","Male")->where('baby_kind','twins')->count();
-    $f1= front_desk_birth_report_data::where("baby_type","Female")->count();
-    $f2=front_desk_birth_report_data::where("baby_type","Female")->where('baby_kind','twins')->count();
-    return
-    [
-       'male' =>  $m1+$m2,
-       'female' =>  $f1+$f2,
+        ];
+    }
+    
+    /*
+    * function name : Baby_male_count
+    * function job  : calculates statistics in the baby_type field for baby kind twins
+    * Return        : number of male twins int the baby_type field
+    */
+    public function Baby_male_count()
+    {
+        $m1= front_desk_birth_report_data::where("baby_type","Male")->count();
+        $m2=front_desk_birth_report_data::where("baby_type","Male")->where('baby_kind','twins')->count();
+        return $m1 + $m2;
+    }
+    /*
+    * function name : Baby_female_count
+    * function job  : calculates statistics in the baby_type field for baby kind twins 
+    * Return        : number of female twins int the baby_type field
+    */
+    public function Baby_female_count()
+    {
+        $f1= front_desk_birth_report_data::where("baby_type","Female")->count();
+        $f2=front_desk_birth_report_data::where("baby_type","Female")->where('baby_kind','twins')->count();
+        return $f1+$f2;
+    }
+    
+    /*
+    * function name : Baby_female_male_count
+    * function job  : calculates statistics in the baby_type field for baby kind twins for male and male
+    * Return        : number of female and male twins int the baby_type field
+    */
+    
+    public function Baby_female_male_count()
+    {
+        $m1= front_desk_birth_report_data::where("baby_type","Male")->count();
+        $m2=front_desk_birth_report_data::where("baby_type","Male")->where('baby_kind','twins')->count();
+        $f1= front_desk_birth_report_data::where("baby_type","Female")->count();
+        $f2=front_desk_birth_report_data::where("baby_type","Female")->where('baby_kind','twins')->count();
+        return
+        [
+           'male' =>  $m1+$m2,
+           'female' =>  $f1+$f2,
 
-];
-}
+        ];
+    }
 }
 
 /*
