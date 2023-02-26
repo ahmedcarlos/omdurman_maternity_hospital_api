@@ -290,10 +290,11 @@ class users_controller extends Controller
     
     /*
     * function name : all_counts
-    * function job  : calculates statistics in the user table for the designation, gender and status records
+    * function job  : calculates statistics in the user table for the designation, gender 
+                      and status records
     * Return        : number of all users, vice doctors, nurses, Statistician, General Doctor,
-                      Male, Female, Vice, Advisor, Specialist, General, Excellence, National Service and 
-                      Collaborator in the status field 
+                      Male, Female, Vice, Advisor, Specialist, General, Excellence, 
+                      National Service and Collaborator in the status field 
     */
     public function all_counts()
     {
@@ -335,8 +336,8 @@ class users_controller extends Controller
     }
     
     /*
-    * function name : National_Service_count
-    * function job  : calculates statistics in the user table between status and National Service 
+    * function name : user_start_end_date
+    * function job  : retrieve date between start and end date 
     * Return        : number of National Service in the status field 
     */
     public function user_start_end_date(Request $req)
@@ -346,9 +347,10 @@ class users_controller extends Controller
     }
     
     /*
-    * function name : National_Service_count
-    * function job  : calculates statistics in the user table between status and National Service 
-    * Return        : number of National Service in the status field 
+    * function name : user_start_end_date_count
+    * function job  : calculates statistics in the user table in the date field 
+                      between start and end date
+    * Return        : date from start to end
     */
     public function user_start_end_date_count(Request $req)
     {
