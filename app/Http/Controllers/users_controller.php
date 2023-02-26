@@ -31,7 +31,7 @@ class users_controller extends Controller
     
     /*
     * function name : post_login 
-    * function job  : function to send request to users in api 
+    * function job  : function to send request to users in api and check if he is authorized user
     * Parameters    : $request
     * Return        : user and token from  the database if the request true else is failed
     */
@@ -61,7 +61,12 @@ class users_controller extends Controller
         return User::where('national_id', $national_id)->where('password', $password)->get();
     }
 
-    //
+    /*
+    * function name : post_users 
+    * function job  : function to send request to users in api
+    * Parameters    : $req
+    * Return        : save users in the database if the request true else is failed
+    */
     public function post_users(Request $req)
     {
         $add = new User;
@@ -82,7 +87,13 @@ class users_controller extends Controller
             return ['result' => 'result is failed'];
         }
     }
-
+    
+    /*
+    * function name : update_user 
+    * function job  : send request to user in api and update user fields
+    * Parameters    : $req
+    * Return        : update user in the database if the request true else is failed
+    */
     public function update_user(Request $req)
     {
         $user = User::find($req->id);
@@ -103,6 +114,13 @@ class users_controller extends Controller
             return ['result' => 'result is failed'];
         }
     }
+    
+    /*
+    * function name : search_users 
+    * function job  : send request to user and search in api
+    * Parameters    : $national_id_or_name
+    * Return        : user information in the database if the request true else is failed
+    */
     public function search_users($national_id_or_name)
     {
         if ($national_id_or_name == "") {
@@ -111,6 +129,13 @@ class users_controller extends Controller
             return User::where('national_id', $national_id_or_name)->orwhere('first_name', 'LIKE', "%$national_id_or_name%")->get();
         }
     }
+    
+    /*
+    * function name : delete_user 
+    * function job  : delete user record in the database
+    * Parameters    : $id
+    * Return        : data is deleted if $id is true else result is failed
+    */
     public function delete_user($id)
     {
         $user = User::find($id);
@@ -121,10 +146,23 @@ class users_controller extends Controller
             return ['result' => 'result is failed'];
         }
     }
+    
+    
+     /*
+    * function name : all_user_count
+    * function job  : calculates statistics in the users table 
+    * Return        : number of all users
+    */
     public function all_user_count()
     {
         return User::all()->count();
     }
+    
+    /*
+    * function name : vice_doctor_count
+    * function job  : calculates statistics in the user table between designation and Vice Doctor 
+    * Return        : number of Vice Doctor in the database
+    */
     public function vice_doctor_count()
     {
         return User::where("designation","Vice Doctor")->count();
