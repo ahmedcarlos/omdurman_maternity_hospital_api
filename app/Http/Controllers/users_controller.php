@@ -49,8 +49,7 @@ class users_controller extends Controller
     {
         $add = new User;
         $add->user_id = $req->user_id;
-        $add->first_name = $req->first_name;
-        $add->last_name = $req->last_name;
+        $add->full_name = $req->full_name;
         $add->national_id = $req->national_id;
         $add->phone_number = $req->phone_number;
         $add->nationality = $req->nationality;
@@ -70,8 +69,7 @@ class users_controller extends Controller
     {
         $user = User::find($req->id);
         $user->user_id = $req->user_id;
-        $user->first_name = $req->first_name;
-        $user->last_name = $req->last_name;
+        $user->full_name = $req->full_name;
         $user->national_id = $req->national_id;
         $user->phone_number = $req->phone_number;
         $user->nationality = $req->nationality;
@@ -91,7 +89,7 @@ class users_controller extends Controller
         if ($national_id_or_name == "") {
             return User::all();
         } else {
-            return User::where('national_id', $national_id_or_name)->orwhere('first_name', 'LIKE', "%$national_id_or_name%")->get();
+            return User::where('national_id', $national_id_or_name)->orwhere('full_name', 'LIKE', "%$national_id_or_name%")->get();
         }
     }
     public function delete_user($id)

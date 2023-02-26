@@ -17,8 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('user_id');
             $table->dateTime('date')->useCurrent();
-            $table->string('first_name')->nullable()->default(null);
-            $table->string('last_name')->nullable()->default(null);
+            $table->string('full_name')->nullable()->default(null);
             $table->string('national_id')->nullable()->default(null)->unique();
             $table->string('phone_number')->nullable()->default(null);
             $table->string('nationality')->nullable()->default(null);
