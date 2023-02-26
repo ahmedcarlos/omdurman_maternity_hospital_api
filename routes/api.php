@@ -57,63 +57,100 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-//route post front desk birt report data/id{integer} url
+//route for post front desk birt report data/id{integer} url
 Route::get('get_front_desk_birth_report_data/{patient_id}', [front_desk_birth_report_data_controller::class, 'get_front_desk_birth_report_data']);
 
-//route post front desk birt report data url
+//route for post front desk birt report data url
 Route::post('post_front_desk_birth_report_data', [front_desk_birth_report_data_controller::class, 'post_front_desk_birth_report_data']);
 
-// Rout get Newborn_status_count url
+// Route for get Newborn_status_count url
 Route::get('Newborn_status_count', [front_desk_birth_report_data_controller::class, 'Newborn_status_count']);
 
-// Rout get Baby_male_count url
+// Route for get Baby_male_count url
 Route::get('Baby_male_count', [front_desk_birth_report_data_controller::class, 'Baby_male_count']);
 
-// Rout get Baby_female_count url
+// Route for get Baby_female_count url
 Route::get('Baby_female_count', [front_desk_birth_report_data_controller::class, 'Baby_female_count']);
 
-// Rout get Baby_female_male_count url
+// Route for get Baby_female_male_count url
 Route::get('Baby_female_male_count', [front_desk_birth_report_data_controller::class, 'Baby_female_male_count']);
 
-//front desk patients api
+// Route for get get_all_front_desk_patients url
 Route::get('get_all_front_desk_patients/', [front_desk_patients_controller::class, 'get_all_front_desk_patients']);
+
+// Route for get get_front_desk_patients/id{integer} url
 Route::get('get_front_desk_patients/{patient_id}', [front_desk_patients_controller::class, 'get_front_desk_patients']);
+
+//route for post_front_desk_patients url
 Route::post('post_front_desk_patients', [front_desk_patients_controller::class, 'post_front_desk_patients']);
+
+// Route for get today_patient_count url
 Route::get('today_patient_count', [front_desk_patients_controller::class, 'today_patient_count']);
+
+// Route for get year_pationt_count url
 Route::get('year_pationt_count', [front_desk_patients_controller::class, 'year_pationt_count']);
+
+//route for post front_desk_patients_start_end_date url
 Route::post('front_desk_patients_start_end_date', [front_desk_patients_controller::class, 'front_desk_patients_start_end_date']);
+
+//route for post front_desk_patients_start_end_date_count url
 Route::post('front_desk_patients_start_end_date_count', [front_desk_patients_controller::class, 'front_desk_patients_start_end_date_count']);
+
+//route for get get_all_front_desk_patients_counts url
 Route::get('get_all_front_desk_patients_counts', [front_desk_patients_controller::class, 'get_all_front_desk_patients_counts']);
-//front desk statistics supplement api
+
+// Route for get get_front_desk_statistics_supplement/id{integer} url
 Route::get('get_front_desk_statistics_supplement/{patient_id}', [front_desk_statistics_supplement_controller::class, 'get_front_desk_statistics_supplement']);
+
+//route for post post_front_desk_statistics_supplement url
 Route::post('post_front_desk_statistics_supplement', [front_desk_statistics_supplement_controller::class, 'post_front_desk_statistics_supplement']);
 
-//front desk statistic form api
+// Route for get get_front_desk_statistic_form/id{integer} url
 Route::get('get_front_desk_statistic_form/{patient_id}', [front_desk_statistic_form_controller::class, 'get_front_desk_statistic_form']);
+
+//route for post post_front_desk_statistic_form url
 Route::post('post_front_desk_statistic_form', [front_desk_statistic_form_controller::class, 'post_front_desk_statistic_form']);
+
+//route for get Die_pationt_count url
 Route::get('Die_pationt_count', [front_desk_statistic_form_controller::class, 'Die_pationt_count']);
+
+//route for get patients_condition_upon_exit_counts url
 Route::get('patients_condition_upon_exit_counts', [front_desk_statistic_form_controller::class, 'patients_condition_upon_exit_counts']);
+
+//route for post q1die_patients_start_end_date url
 Route::post('q1die_patients_start_end_date', [front_desk_statistic_form_controller::class, 'die_patients_start_end_date']);
+
+//route for post die_patients_start_end_date_count url
 Route::post('die_patients_start_end_date_count', [front_desk_statistic_form_controller::class, 'die_patients_start_end_date_count']);
+
+//route for get die_patients_counts url
 Route::get('die_patients_counts', [front_desk_statistic_form_controller::class, 'die_patients_counts']);
 
-//Search Front desk api
+// Route for get search_patients/patient_id_or_name{integer or string} url
 Route::get('search_patients/{patient_id_or_name}', [front_desk_patients_controller::class, 'search_patients']);
 
-//general doctor house officer in patient follow up sheet api
+// Route for get get_general_doctor_house_officer_in_patient_follow_up_sheet/id{integer} url
 Route::get('get_general_doctor_house_officer_in_patient_follow_up_sheet/{patient_id}', [general_doctor_house_officer_in_patient_follow_up_sheet_controller::class, 'get_general_doctor_house_officer_in_patient_follow_up_sheet']);
+
+//route for post post_general_doctor_house_officer_in_patient_follow_up_sheet url
 Route::post('post_general_doctor_house_officer_in_patient_follow_up_sheet', [general_doctor_house_officer_in_patient_follow_up_sheet_controller::class, 'post_general_doctor_house_officer_in_patient_follow_up_sheet']);
 
-//nurse and vice doctor i v fluids form api
+// Route for get get_nurse_and_vice_doctor_i_v_fluids_form/id{integer} url
 Route::get('get_nurse_and_vice_doctor_i_v_fluids_form/{patient_id}', [nurse_and_vice_doctor_i_v_fluids_form_controller::class, 'get_nurse_and_vice_doctor_i_v_fluids_form']);
+
+//route for post post_nurse_and_vice_doctor_i_v_fluids_form url
 Route::post('post_nurse_and_vice_doctor_i_v_fluids_form', [nurse_and_vice_doctor_i_v_fluids_form_controller::class, 'post_nurse_and_vice_doctor_i_v_fluids_form']);
 
-//nurse anticoagulation chart
+// Route for get get_nurse_anticoagulation_chart/id{integer} url
 Route::get('get_nurse_anticoagulation_chart/{patient_id}', [nurse_anticoagulation_chart_controller::class, 'get_nurse_anticoagulation_chart']);
+
+//route for post post_nurse_anticoagulation_chart url
 Route::post('post_nurse_anticoagulation_chart', [nurse_anticoagulation_chart_controller::class, 'post_nurse_anticoagulation_chart']);
 
-// nurse investigation form api
+// Route for get get_nurse_investigation_form/id{integer} url
 Route::get('get_nurse_investigation_form/{patient_id}', [nurse_investigation_form_controller::class, 'get_nurse_investigation_form']);
+
+//route for post post_nurse_investigation_form url
 Route::post('post_nurse_investigation_form', [nurse_investigation_form_controller::class, 'post_nurse_investigation_form']);
 
 //nurse observation form api
