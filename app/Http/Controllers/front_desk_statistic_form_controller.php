@@ -8,12 +8,23 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 class front_desk_statistic_form_controller extends Controller
 {
+    /*
+    * Function Name : get_front_desk_statistic_form
+    * Function Job  : retrieve front_desk_statistic_form from api determined by $patient_id
+    * Parameters    : $patient_id
+    * Return        : routes all front_desk_statistic_form from the database determined by $patient_id
+    */
     public function get_front_desk_statistic_form($patient_id)
     {
         return front_desk_statistic_form::where('patient_id', $patient_id)->get();
     }
 
-    //
+    /*
+    * function name : post_front_desk_statistic_form
+    * function job  : send request to front_desk_statistic_form in api
+    * Parameters    : $req
+    * Return        : save front_desk_statistic_form in the database if the request true else is failed
+    */
     public function post_front_desk_statistic_form(Request $req)
     {
         $add = new front_desk_statistic_form;
