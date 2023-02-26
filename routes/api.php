@@ -153,120 +153,204 @@ Route::get('get_nurse_investigation_form/{patient_id}', [nurse_investigation_for
 //route for post post_nurse_investigation_form url
 Route::post('post_nurse_investigation_form', [nurse_investigation_form_controller::class, 'post_nurse_investigation_form']);
 
-//nurse observation form api
+//route for get get_nurse_observation_form/patient_id{integer} url
 Route::get('get_nurse_observation_form/{patient_id}', [nurse_observation_form_controller::class, 'get_nurse_observation_form']);
+
+//route for post post_nurse_observation_form url
 Route::post('post_nurse_observation_form', [nurse_observation_form_controller::class, 'post_nurse_observation_form']);
 
-//nurse progress notes api
+//route for get get_nurse_progress_notes/patient_id{integer} url
 Route::get('get_nurse_progress_notes/{patient_id}', [nurse_progress_notes_controller::class, 'get_nurse_progress_notes']);
+
+//route for post post_nurse_observation_form url
 Route::post('post_nurse_progress_notes', [nurse_progress_notes_controller::class, 'post_nurse_progress_notes']);
 
-//user login api
+//route for get login/user_id/{password} url
 Route::get('login/{user_id}/{password}', [users_controller::class, 'login']);
+
+//route for post post_login url
 Route::post('post_login', [users_controller::class, 'post_login']);
 
-//users api
+//route for get get_users/national_id{integer} url
 Route::get('get_all_users/', [users_controller::class, 'get_all_users']);
+
+//route for get get_users/national_id{integer} url
 Route::get('get_users/{national_id}', [users_controller::class, 'get_users']);
+
+//route for post post_users url
 Route::post('post_users', [users_controller::class, 'post_users']);
+
+//route for update update_user url
 Route::put('update_user/', [users_controller::class, 'update_user']);
+
+//route for delete delete_user/id{integer} url
 Route::delete('delete_user/{id}', [users_controller::class, 'delete_user']);
-//Search users api
+
+//route for search search_users/national_id_or_name{integer or string} url
 Route::get('search_users/{national_id_or_name}', [users_controller::class, 'search_users']);
-// Statistics of user api
+
+//route for get all_user_count url
 Route::get('all_user_count/', [users_controller::class, 'all_user_count']);
+
+//route for get vice_doctor_count url
 Route::get('vice_doctor_count/', [users_controller::class, 'vice_doctor_count']);
+
+//route for get statistician_count url
 Route::get('statistician_count/', [users_controller::class, 'statistician_count']);
+
+//route for get nurse_count url
 Route::get('nurse_count/', [users_controller::class, 'nurse_count']);
+
+//route for get General_Doctor_count url
 Route::get('General_Doctor_count/', [users_controller::class, 'General_Doctor_count']);
+
+//route for get Male_count url
 Route::get('Male_count/', [users_controller::class, 'Male_count']);
+
+//route for get Female_count url
 Route::get('Female_count/', [users_controller::class, 'Female_count']);
+
+//route for get Vice_count url
 Route::get('Vice_count/', [users_controller::class, 'Vice_count']);
+
+//route for get Advisor_count url
 Route::get('Advisor_count/', [users_controller::class, 'Advisor_count']);
+
+//route for get Specialist_count url
 Route::get('Specialist_count/', [users_controller::class, 'Specialist_count']);
+
+//route for get General_count url
 Route::get('General_count/', [users_controller::class, 'General_count']);
+
+//route for get Excellence_count url
 Route::get('Excellence_count/', [users_controller::class, 'Excellence_count']);
+
+//route for get National_Service_count url
 Route::get('National_Service_count/', [users_controller::class, 'National_Service_count']);
+
+//route for get Collaboratore_count url
 Route::get('Collaboratore_count/', [users_controller::class, 'Collaboratore_count']);
+
+//route for get all_counts url
 Route::get('all_counts/', [users_controller::class, 'all_counts']);
+
+//route for post user_start_end_date url
 Route::post('user_start_end_date/', [users_controller::class, 'user_start_end_date']);
+
+//route for post user_start_end_date_count url
 Route::post('user_start_end_date_count/', [users_controller::class, 'user_start_end_date_count']);
 
-//get_vice_doctor_antenatal_admission_follow_up_sheet api
+// Route for get get_vice_doctor_antenatal_admission_follow_up_sheet/patient_id{integer} url
 Route::get('get_vice_doctor_antenatal_admission_follow_up_sheet/{patient_id}', [vice_doctor_antenatal_admission_follow_up_sheet_controller::class, 'get_vice_doctor_antenatal_admission_follow_up_sheet']);
+
+//route for post post_vice_doctor_antenatal_admission_follow_up_sheet url
 Route::post('post_vice_doctor_antenatal_admission_follow_up_sheet', [vice_doctor_antenatal_admission_follow_up_sheet_controller::class, 'post_vice_doctor_antenatal_admission_follow_up_sheet']);
 
-//vice doctor antenatal admission sheet api
+// Route for get get_vice_doctor_antenatal_admission_sheet/patient_id{integer} url
 Route::get('get_vice_doctor_antenatal_admission_sheet/{patient_id}', [vice_doctor_antenatal_admission_sheet_controller::class, 'get_vice_doctor_antenatal_admission_sheet']);
+
+//route for post post_vice_doctor_antenatal_admission_sheet url
 Route::post('post_vice_doctor_antenatal_admission_sheet', [vice_doctor_antenatal_admission_sheet_controller::class, 'post_vice_doctor_antenatal_admission_sheet']);
 
-//vice doctor antenatal follow up api
+// Route for get get_vice_doctor_antenatal_follow_up/patient_id{integer} url
 Route::get('get_vice_doctor_antenatal_follow_up/{patient_id}', [vice_doctor_antenatal_follow_up_controller::class, 'get_vice_doctor_antenatal_follow_up']);
+
+//route for post post_vice_doctor_antenatal_follow_up url
 Route::post('post_vice_doctor_antenatal_follow_up', [vice_doctor_antenatal_follow_up_controller::class, 'post_vice_doctor_antenatal_follow_up']);
 
-//vice doctor anticoagulation chart api
+// Route for get get_vice_doctor_anticoagulation_chart/patient_id{integer} url
 Route::get('get_vice_doctor_anticoagulation_chart/{patient_id}', [vice_doctor_anticoagulation_chart_controller::class, 'get_vice_doctor_anticoagulation_chart']);
+
+//route for post post_vice_doctor_anticoagulation_chart url
 Route::post('post_vice_doctor_anticoagulation_chart', [vice_doctor_anticoagulation_chart_controller::class, 'post_vice_doctor_anticoagulation_chart']);
 
-//vice doctor as required and post operative drugs form api
+// Route for get get_vice_doctor_as_required_and_post_operative_drugs_form/patient_id{integer} url
 Route::get('get_vice_doctor_as_required_and_post_operative_drugs_form/{patient_id}', [vice_doctor_as_required_and_post_operative_drugs_form_controller::class, 'get_vice_doctor_as_required_and_post_operative_drugs_form']);
+
+//route for post post_vice_doctor_as_required_and_post_operative_drugs_form url
 Route::post('post_vice_doctor_as_required_and_post_operative_drugs_form', [vice_doctor_as_required_and_post_operative_drugs_form_controller::class, 'post_vice_doctor_as_required_and_post_operative_drugs_form']);
 
-//vice doctor blood products and i v fluids api
+// Route for get get_vice_doctor_blood_products_and_i_v_fluids/patient_id{integer} url
 Route::get('get_vice_doctor_blood_products_and_i_v_fluids/{patient_id}', [vice_doctor_blood_products_and_i_v_fluids_controller::class, 'get_vice_doctor_blood_products_and_i_v_fluids']);
+
+//route for post post_vice_doctor_blood_products_and_i_v_fluids url
 Route::post('post_vice_doctor_blood_products_and_i_v_fluids', [vice_doctor_blood_products_and_i_v_fluids_controller::class, 'post_vice_doctor_blood_products_and_i_v_fluids']);
 
-//vice doctor clinical discharge summary api
+// Route for get get_vice_doctor_clinical_discharge_summary/patient_id{integer} url
 Route::get('get_vice_doctor_clinical_discharge_summary/{patient_id}', [vice_doctor_clinical_discharge_summary_controller::class, 'get_vice_doctor_clinical_discharge_summary']);
+
+//route for post post_vice_doctor_clinical_discharge_summary url
 Route::post('post_vice_doctor_clinical_discharge_summary', [vice_doctor_clinical_discharge_summary_controller::class, 'post_vice_doctor_clinical_discharge_summary']);
 
-//vice doctor delivery and postnatal api
+// Route for get get_vice_doctor_delivery_and_postnatal/patient_id{integer} url
 Route::get('get_vice_doctor_delivery_and_postnatal/{patient_id}', [vice_doctor_delivery_and_postnatal_controller::class, 'get_vice_doctor_delivery_and_postnatal']);
+
+//route for post post_vice_doctor_delivery_and_postnatal url
 Route::post('post_vice_doctor_delivery_and_postnatal', [vice_doctor_delivery_and_postnatal_controller::class, 'post_vice_doctor_delivery_and_postnatal']);
 
-//vice doctor discharge drugs api
+// Route for get get_vice_doctor_discharge_drugs/patient_id{integer} url
 Route::get('get_vice_doctor_discharge_drugs/{patient_id}', [vice_doctor_discharge_drugs_controller::class, 'get_vice_doctor_discharge_drugs']);
+
+//route for post post_vice_doctor_discharge_drugs url
 Route::post('post_vice_doctor_discharge_drugs', [vice_doctor_discharge_drugs_controller::class, 'post_vice_doctor_discharge_drugs']);
 
-//vice doctor dr progress notes api
+// Route for get get_vice_doctor_dr_progress_notes/patient_id{integer} url
 Route::get('get_vice_doctor_dr_progress_notes/{patient_id}', [vice_doctor_dr_progress_notes_controller::class, 'get_vice_doctor_dr_progress_notes']);
+
+//route for post post_vice_doctor_dr_progress_notes url
 Route::post('post_vice_doctor_dr_progress_notes', [vice_doctor_dr_progress_notes_controller::class, 'post_vice_doctor_dr_progress_notes']);
 
-//vice doctor haematology results api
+// Route for get get_vice_doctor_haematology_results/patient_id{integer} url
 Route::get('get_vice_doctor_haematology_results/{patient_id}', [vice_doctor_haematology_results_controller::class, 'get_vice_doctor_haematology_results']);
+
+//route for post post_vice_doctor_haematology_results url
 Route::post('post_vice_doctor_haematology_results', [vice_doctor_haematology_results_controller::class, 'post_vice_doctor_haematology_results']);
 
-//vice doctor investigation request form api
+// Route for get get_vice_doctor_investigation_request_form/patient_id{integer} url
 Route::get('get_vice_doctor_investigation_request_form/{patient_id}', [vice_doctor_investigation_request_form_controller::class, 'get_vice_doctor_investigation_request_form']);
+
+//route for post post_vice_doctor_investigation_request_form url
 Route::post('post_vice_doctor_investigation_request_form', [vice_doctor_investigation_request_form_controller::class, 'post_vice_doctor_investigation_request_form']);
 
-//vice doctor labour record form api
+// Route for get get_vice_doctor_labour_record_form/patient_id{integer} url
 Route::get('get_vice_doctor_labour_record_form/{patient_id}', [vice_doctor_labour_record_form_controller::class, 'get_vice_doctor_labour_record_form']);
+
+//route for post post_vice_doctor_labour_record_form url
 Route::post('post_vice_doctor_labour_record_form', [vice_doctor_labour_record_form_controller::class, 'post_vice_doctor_labour_record_form']);
 
-//vice doctor labour ward admission form
+// Route for get get_vice_doctor_labour_ward_admission_form/patient_id{integer} url
 Route::get('get_vice_doctor_labour_ward_admission_form/{patient_id}', [vice_doctor_labour_ward_admission_form_controller::class, 'get_vice_doctor_labour_ward_admission_form']);
+
+//route for post post_vice_doctor_labour_ward_admission_form url
 Route::post('post_vice_doctor_labour_ward_admission_form', [vice_doctor_labour_ward_admission_form_controller::class, 'post_vice_doctor_labour_ward_admission_form']);
 
-//vice doctor labour ward instructions api
+// Route for get get_vice_doctor_labour_ward_instructions/patient_id{integer} url
 Route::get('get_vice_doctor_labour_ward_instructions/{patient_id}', [vice_doctor_labour_ward_instructions_controller::class, 'get_vice_doctor_labour_ward_instructions']);
+
+//route for post post_vice_doctor_labour_ward_instructions url
 Route::post('post_vice_doctor_labour_ward_instructions', [vice_doctor_labour_ward_instructions_controller::class, 'post_vice_doctor_labour_ward_instructions']);
 
-//vice doctor obstetrical history api
+// Route for get get_vice_doctor_obstetrical_history/patient_id{integer} url
 Route::get('get_vice_doctor_obstetrical_history/{patient_id}', [vice_doctor_obstetrical_history_controller::class, 'get_vice_doctor_obstetrical_history']);
+
+//route for post post_vice_doctor_obstetrical_history url
 Route::post('post_vice_doctor_obstetrical_history', [vice_doctor_obstetrical_history_controller::class, 'post_vice_doctor_obstetrical_history']);
 
-//vice doctor operation note api
+// Route for get get_vice_doctor_operation_note/patient_id{integer} url
 Route::get('get_vice_doctor_operation_note/{patient_id}', [vice_doctor_operation_note_controller::class, 'get_vice_doctor_operation_note']);
+
+//route for post post_vice_doctor_operation_note url
 Route::post('post_vice_doctor_operation_note', [vice_doctor_operation_note_controller::class, 'post_vice_doctor_operation_note']);
 
-//vice doctor treatment order sheet api
+// Route for get get_vice_doctor_treatment_order_sheet/patient_id{integer} url
 Route::get('get_vice_doctor_treatment_order_sheet/{patient_id}', [vice_doctor_treatment_order_sheet_controller::class, 'get_vice_doctor_treatment_order_sheet']);
+
+//route for post post_vice_doctor_treatment_order_sheet url
 Route::post('post_vice_doctor_treatment_order_sheet', [vice_doctor_treatment_order_sheet_controller::class, 'post_vice_doctor_treatment_order_sheet']);
 
-//rout get for get_vice_doctor_regular_drugs api
+// Route for get get_vice_doctor_regular_drugs/patient_id{integer} url
 Route::get('get_vice_doctor_regular_drugs/{patient_id}', [vice_doctor_regular_drugs_controller::class, 'get_vice_doctor_regular_drugs']);
 
-//route post for post_vice_doctor_regular_drugs url
+//route for post post_vice_doctor_regular_drugs url
 Route::post('post_vice_doctor_regular_drugs', [vice_doctor_regular_drugs_controller::class, 'post_vice_doctor_regular_drugs']);
 
