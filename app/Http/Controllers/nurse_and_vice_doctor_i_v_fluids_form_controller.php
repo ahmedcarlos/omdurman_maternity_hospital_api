@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\nurse_and_vice_doctor_i_v_fluids_form;
 class nurse_and_vice_doctor_i_v_fluids_form_controller extends Controller
 {
+    /*
+    * Function Name : get_nurse_and_vice_doctor_i_v_fluids_form
+    * Function Job  : retrieve nurse_and_vice_doctor_i_v_fluids_form from api determined by $patient_id
+    * Parameters    : $patient_id
+    * Return        : routes all nurse_and_vice_doctor_i_v_fluids_form from the database determined by $patient_id
+    */
     public function get_nurse_and_vice_doctor_i_v_fluids_form($patient_id)
     {
         return nurse_and_vice_doctor_i_v_fluids_form::where('patient_id',$patient_id)->get();
