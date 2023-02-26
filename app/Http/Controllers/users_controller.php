@@ -18,12 +18,23 @@ class users_controller extends Controller
     {
         return User::where('national_id', $national_id)->get();
     }
-
+    
+    /*
+    * Function Name : get_all_users
+    * Function Job  : retrieve all users from api
+    * Return        : routes all users from the database
+    */
     public function get_all_users()
     {
         return User::all();
     }
-
+    
+    /*
+    * function name : post_login 
+    * function job  : function to send request to users in api 
+    * Parameters    : $request
+    * Return        : user and token from  the database if the request true else is failed
+    */
     public function post_login(Request $request)
     {
         $data = $request->validate([
