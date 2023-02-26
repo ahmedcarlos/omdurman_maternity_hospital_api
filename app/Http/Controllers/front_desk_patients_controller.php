@@ -114,6 +114,12 @@ class front_desk_patients_controller extends Controller
         return front_desk_patients::whereBetween('date', [$req->start,$req->end])
         ->orWhereBetween('date', [$req->start, $req->end])->count();
     }
+    
+    /*
+    * Function Name : get_all_front_desk_patients_counts
+    * Function Job  : retrieve vice_doctor_regular_drugs from api determined by $patient_id
+    * Return        : routes all vice_doctor_regular_drugs from the database determined by $patient_id
+    */
     public function get_all_front_desk_patients_counts()
     {
         return front_desk_patients::all()->count();
