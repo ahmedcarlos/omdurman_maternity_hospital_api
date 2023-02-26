@@ -57,12 +57,22 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-//front desk birt report data api
+//route post front desk birt report data/id{integer} url
 Route::get('get_front_desk_birth_report_data/{patient_id}', [front_desk_birth_report_data_controller::class, 'get_front_desk_birth_report_data']);
+
+//route post front desk birt report data url
 Route::post('post_front_desk_birth_report_data', [front_desk_birth_report_data_controller::class, 'post_front_desk_birth_report_data']);
+
+// Rout get Newborn_status_count url
 Route::get('Newborn_status_count', [front_desk_birth_report_data_controller::class, 'Newborn_status_count']);
+
+// Rout get Baby_male_count url
 Route::get('Baby_male_count', [front_desk_birth_report_data_controller::class, 'Baby_male_count']);
+
+// Rout get Baby_female_count url
 Route::get('Baby_female_count', [front_desk_birth_report_data_controller::class, 'Baby_female_count']);
+
+// Rout get Baby_female_male_count url
 Route::get('Baby_female_male_count', [front_desk_birth_report_data_controller::class, 'Baby_female_male_count']);
 
 //front desk patients api
@@ -83,7 +93,7 @@ Route::get('get_front_desk_statistic_form/{patient_id}', [front_desk_statistic_f
 Route::post('post_front_desk_statistic_form', [front_desk_statistic_form_controller::class, 'post_front_desk_statistic_form']);
 Route::get('Die_pationt_count', [front_desk_statistic_form_controller::class, 'Die_pationt_count']);
 Route::get('patients_condition_upon_exit_counts', [front_desk_statistic_form_controller::class, 'patients_condition_upon_exit_counts']);
-Route::post('die_patients_start_end_date', [front_desk_statistic_form_controller::class, 'die_patients_start_end_date']);
+Route::post('q1die_patients_start_end_date', [front_desk_statistic_form_controller::class, 'die_patients_start_end_date']);
 Route::post('die_patients_start_end_date_count', [front_desk_statistic_form_controller::class, 'die_patients_start_end_date_count']);
 Route::get('die_patients_counts', [front_desk_statistic_form_controller::class, 'die_patients_counts']);
 
@@ -217,7 +227,9 @@ Route::post('post_vice_doctor_operation_note', [vice_doctor_operation_note_contr
 Route::get('get_vice_doctor_treatment_order_sheet/{patient_id}', [vice_doctor_treatment_order_sheet_controller::class, 'get_vice_doctor_treatment_order_sheet']);
 Route::post('post_vice_doctor_treatment_order_sheet', [vice_doctor_treatment_order_sheet_controller::class, 'post_vice_doctor_treatment_order_sheet']);
 
-//vice_doctor_regular_drugs api
+//rout get for get_vice_doctor_regular_drugs api
 Route::get('get_vice_doctor_regular_drugs/{patient_id}', [vice_doctor_regular_drugs_controller::class, 'get_vice_doctor_regular_drugs']);
+
+//route post for post_vice_doctor_regular_drugs url
 Route::post('post_vice_doctor_regular_drugs', [vice_doctor_regular_drugs_controller::class, 'post_vice_doctor_regular_drugs']);
 
