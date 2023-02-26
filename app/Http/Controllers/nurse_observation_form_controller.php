@@ -17,7 +17,12 @@ class nurse_observation_form_controller extends Controller
         return nurse_observation_form::where('patient_id',$patient_id)->get();
     }
     
-    //
+    /*
+    * function name : nurse_observation_form
+    * function job  : send request to nurse_observation_form in api
+    * Parameters    : $req
+    * Return        : save nurse_observation_form in the database if the request true else is failed
+    */
     public function post_nurse_observation_form(Request $req)
     {
         $add = new nurse_observation_form;
